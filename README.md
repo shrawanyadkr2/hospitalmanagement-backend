@@ -1,4 +1,4 @@
-# 🏥 Hospital Management System Backend (Spring Boot 3.x + Java 21)
+#  Hospital Management System Backend (Spring Boot 3.x + Java 21)
 
 [![Java 21](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![Spring Boot 3.3.5](https://img.shields.io/badge/Spring%20Boot-3.3.5-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -11,7 +11,7 @@ A production-ready, enterprise-grade **Hospital Management System Backend** buil
 
 ---
 
-## 📐 System Architecture & Flowchart
+##  System Architecture & Flowchart
 
 ### 1. High-Level Architecture Diagram
 
@@ -75,22 +75,22 @@ workflow
 
 ---
 
-## 🔐 Role-Based Access Control (RBAC)
+##  Role-Based Access Control (RBAC)
 
 The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: `ADMIN`, `DOCTOR`, `PATIENT`, and `RECEPTIONIST`.
 
 | Role | Responsibilities & Access Rules | Authorized Endpoints |
 | :--- | :--- | :--- |
-| 👑 **ADMIN** | System governance, department management, doctor onboarding, user account activation/deactivation, and overall revenue analytics. | Full access to `/api/admin/**`, `/api/departments/**`, `/api/doctors/**`, and `/api/dashboard/**`. |
-| 👨‍⚕️ **DOCTOR** | Managing assigned appointments, issuing prescriptions, recording clinical diagnoses, and uploading medical test reports. | Access to `/api/appointments/doctor/**`, `/api/prescriptions/**`, `/api/medical-records/**`, `/api/files/upload/report`. |
-| 🩺 **PATIENT** | Self-registration, booking appointments, viewing medical history & prescriptions, paying bills online via Razorpay. | Access to `/api/appointments/**` (booking/cancelling), `/api/prescriptions/patient/**`, `/api/medical-records/patient/**`, `/api/payments/**`. |
-| 🏥 **RECEPTIONIST** | Front-desk patient registration, booking walk-in appointments, generating hospital bills, and processing counter payments. | Access to `/api/patients/**`, `/api/appointments/**`, `/api/bills/**`, `/api/payments/**`. |
+|  **ADMIN** | System governance, department management, doctor onboarding, user account activation/deactivation, and overall revenue analytics. | Full access to `/api/admin/**`, `/api/departments/**`, `/api/doctors/**`, and `/api/dashboard/**`. |
+|  **DOCTOR** | Managing assigned appointments, issuing prescriptions, recording clinical diagnoses, and uploading medical test reports. | Access to `/api/appointments/doctor/**`, `/api/prescriptions/**`, `/api/medical-records/**`, `/api/files/upload/report`. |
+|  **PATIENT** | Self-registration, booking appointments, viewing medical history & prescriptions, paying bills online via Razorpay. | Access to `/api/appointments/**` (booking/cancelling), `/api/prescriptions/patient/**`, `/api/medical-records/patient/**`, `/api/payments/**`. |
+|  **RECEPTIONIST** | Front-desk patient registration, booking walk-in appointments, generating hospital bills, and processing counter payments. | Access to `/api/patients/**`, `/api/appointments/**`, `/api/bills/**`, `/api/payments/**`. |
 
 ---
 
-## 📑 Complete REST API Reference
+##  Complete REST API Reference
 
-### 🔐 1. Authentication & Security (`/api/auth`)
+###  1. Authentication & Security (`/api/auth`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/auth/register` | Public | Register a new user (`ADMIN`, `DOCTOR`, `PATIENT`, `RECEPTIONIST`). |
@@ -102,7 +102,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 🏥 2. Department Management (`/api/departments`)
+###  2. Department Management (`/api/departments`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/departments` | `ADMIN` | Create a new hospital department. |
@@ -113,7 +113,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 👨‍⚕️ 3. Doctor Management (`/api/doctors`)
+###  3. Doctor Management (`/api/doctors`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/doctors` | `ADMIN` | Register new doctor profile linked to department. |
@@ -125,7 +125,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 🩺 4. Patient Management (`/api/patients`)
+###  4. Patient Management (`/api/patients`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/patients` | `RECEPTIONIST`, `ADMIN` | Register new patient (generates `PAT-XXXXXX` code). |
@@ -137,7 +137,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 📅 5. Appointment Management (`/api/appointments`)
+###  5. Appointment Management (`/api/appointments`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/appointments` | Authenticated | Schedule an appointment with a doctor. |
@@ -149,7 +149,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 💊 6. Prescription Management (`/api/prescriptions`)
+###  6. Prescription Management (`/api/prescriptions`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/prescriptions` | `DOCTOR`, `ADMIN` | Create digital prescription for patient consultation. |
@@ -159,7 +159,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 📁 7. Medical Records Management (`/api/medical-records`)
+###  7. Medical Records Management (`/api/medical-records`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/medical-records` | `DOCTOR`, `ADMIN` | Record patient diagnosis, lab test details, and notes. |
@@ -168,7 +168,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 🧾 8. Billing Engine (`/api/bills`)
+###  8. Billing Engine (`/api/bills`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/bills` | `RECEPTIONIST`, `ADMIN` | Generate itemized hospital bill (Consultation, Medicine, Room, Lab, GST). |
@@ -179,7 +179,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 💳 9. Razorpay Payment Integration (`/api/payments`)
+###  9. Razorpay Payment Integration (`/api/payments`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/payments/create-order` | Authenticated | Create Razorpay order (`order_id`) for a bill. |
@@ -187,7 +187,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### ☁️ 10. File Management (`/api/files`)
+###  10. File Management (`/api/files`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `POST` | `/api/files/upload/profile` | Authenticated | Upload user/doctor/patient profile image to Cloudinary. |
@@ -196,14 +196,14 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-### 📊 11. System Dashboard & Analytics (`/api/dashboard`)
+###  11. System Dashboard & Analytics (`/api/dashboard`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/dashboard` | `ADMIN`, `DOCTOR`, `RECEPTIONIST` | Fetch total patients, doctors, revenue, active appointments, and pending bills. |
 
 ---
 
-### ⚙️ 12. Admin Management (`/api/admin`)
+###  12. Admin Management (`/api/admin`)
 | Method | Endpoint | Access | Description |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/admin/users` | `ADMIN` | Fetch paginated list of all system users. |
@@ -212,7 +212,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Core**: Java 21, Spring Boot 3.3.5
 - **Security**: Spring Security 6, JWT (`jjwt-api 0.12.6`), BCrypt Password Encoder
@@ -225,7 +225,7 @@ The system enforces strict **Role-Based Access Control (RBAC)** across 4 roles: 
 
 ---
 
-## 🚀 Local Setup & Deployment
+##  Local Setup & Deployment
 
 ### 1. Prerequisites
 - **JDK 21** or higher installed.
@@ -262,7 +262,7 @@ razorpay.key-secret=<RAZORPAY_KEY_SECRET>
 ```bash
 .\mvnw.cmd spring-boot:run
 ```
-Access Swagger UI at: 👉 **`http://localhost:8080/swagger-ui.html`**
+Access Swagger UI at:  **`http://localhost:8080/swagger-ui.html`**
 
 ---
 
@@ -273,7 +273,7 @@ docker-compose up --build
 
 ---
 
-## 🌐 Production Cloud Deployment (Render / Railway / AWS)
+##  Production Cloud Deployment (Render / Railway / AWS)
 
 This repository is pre-configured for instant cloud deployment:
 - **Port**: Listens to dynamic cloud `${PORT:8080}` variable.
